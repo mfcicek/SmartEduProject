@@ -13,7 +13,9 @@ const app = express();
 
 //Connect DB
 mongoose
-  .connect('mongodb://localhost/smartedu-db')
+  .connect(
+    'mongodb+srv://dbUser:zvlVj3toNXEPDZwO@cluster0.pq1ct.mongodb.net/smartedu-db?retryWrites=true&w=majority'
+  )
   .then(() => {
     console.log('DB CONNECTED SUCCESSFULLY');
   })
@@ -38,7 +40,7 @@ app.use(
     saveUninitialized: true,
     store: MongoStore.create({
       mongoUrl:
-        'mongodb+srv://dbUser:zvlVj3toNXEPDZwO@cluster0.pq1ct.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+        'mongodb+srv://dbUser:zvlVj3toNXEPDZwO@cluster0.pq1ct.mongodb.net/smartedu-db?retryWrites=true&w=majority',
     }),
   })
 );
