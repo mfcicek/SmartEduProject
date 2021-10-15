@@ -1,8 +1,9 @@
 const express = require('express');
-const courseController = require('../controllers/categoryController');
+const categoryController = require('../controllers/categoryController');
 
 const router = express.Router();
 
-router.route('/').post(courseController.createCategory); // http://localhost:3000/categories
+router.route('/').post(categoryController.createCategory); // http://localhost:3000/categories
+router.route('/:id').delete(categoryController.deleteCategory);
 
 module.exports = router;
